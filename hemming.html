@@ -1,0 +1,261 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemmings Magazine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #114B39;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .cover {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cover img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #114B39;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #114B39;
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .grid img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #fff;
+            border-radius: 5px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #114B39;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center-align the list */
+    margin: 20px 0; /* Add spacing around the footer list */
+}
+
+section {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: fadeInUp 2s ease-in-out;
+            text-align: center;
+        }
+
+/* Footer list item styling */
+ul li {
+    display: inline-block; /* Keep the list item inline */
+}
+
+/* Styling for the button link */
+ul li a {
+    display: inline-block; /* Makes the link behave like a button */
+    padding: 10px 20px; /* Add space inside the button */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* Button text color (white) */
+    background-color: #c28b32; /* Button background color (blue) */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for the button */
+ul li a:hover {
+    background-color: #f1eed6; /* Darker blue on hover */
+    color: #c28b32;
+    transform: translateY(-3px); /* Slightly lift the button */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+
+        footer {
+            background-color: #114B39;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".grid img");
+            const modal = document.createElement("div");
+            modal.classList.add("modal");
+            const modalImg = document.createElement("img");
+            modal.appendChild(modalImg);
+            document.body.appendChild(modal);
+
+            images.forEach(img => {
+                img.addEventListener("click", () => {
+                    modalImg.src = img.src;
+                    modal.classList.add("active");
+                });
+            });
+
+            modal.addEventListener("click", () => {
+                modal.classList.remove("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="logo">MyPortfolio.</div>
+        <ul>
+            <li><a href="portfolio.html">BACK</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Hemmings Classic Car</h1>
+        <p>Classic Automobiles Since 1954</p>
+    </header>
+
+    <section>
+        <h2>Hemming Classic Car</h2>
+        <ul>
+            <li>Redesigning Hemmings Classic Car Magazine was an exercise in balancing tradition with modernity. The challenge was to respect the magazine’s nostalgic essence while enhancing its visual appeal for a contemporary audience. By focusing on typography, layout, and hierarchy, I was able to create a design that honored the magazine’s history while improving readability and engagement. This project solidified my belief that great design should preserve a brand’s authenticity while adapting to new audiences and contexts.
+
+</li>
+        </ul>
+    </section>
+
+    <div class="container">
+        <section class="cover">
+            <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_01.jpg" alt="Hemmings Classic Car Cover">
+        </section>
+
+        <section class="section">
+            <h2>Table of Contents</h2>
+            <div class="grid">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_02.jpg" alt="Table of Contents">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Featured Articles</h2>
+            <div class="grid">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_03.jpg" alt="Jay Leno Ford Mustang">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_04.jpg" alt="1969 Malibu Restoration">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_05.jpg" alt="1969 Malibu Restoration">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_06.jpg" alt="1969 Malibu Restoration">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_07.jpg" alt="1969 Malibu Restoration">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_08.jpg" alt="1969 Malibu Restoration">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Advertisements</h2>
+            <div class="grid">
+                <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_09.jpg" alt="Vintage Auction">
+            </div>
+        </section>
+        <section class="cover">
+            <img src="ImgMagazin/Assignment 3 -Editorial Desn_Page_10.jpg" alt="Hemmings Classic Car Cover">
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 | Rushil Bansoodeb Portfolio</p>
+        <p><a href="docs/Project-Editorial Desn.pdf" target="_blank">Hemming_Assets.pdf</a></p>
+        <ul class="more.">
+            <li><a href="coffee.html">NEXT</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
